@@ -4,6 +4,8 @@ import io from "socket.io-client";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
 
+import RenderChat from "../RenderChat/RenderChat";
+
 const socket = io.connect();
 
 export default function Chat() {
@@ -26,7 +28,6 @@ export default function Chat() {
     e.preventDefault();
     if (message) {
       socket.emit("message", {name, message});
-      console.log("message and name -->", message, name);
       setMessage("");
       setEmojiShow(false);
     }
@@ -41,6 +42,13 @@ export default function Chat() {
     setEmojiShow(!showEmoji);
   };
 
+  useEffect(() => {
+    socket.on("message", ({name, message}) => {
+      setChat([...chat, {name, message}]);
+      console.log(chat);
+    })
+  }, [chat])
+
   return (
     <div>
       <form onSubmit={onMessageSubmit}>
@@ -54,6 +62,9 @@ export default function Chat() {
             label="Name"
             ></input>
         </div>
+        <RenderChat 
+          chat={chat}
+        />
         <div className="message-field">
           <input
             onChange={onMessageChange}
@@ -70,7 +81,7 @@ export default function Chat() {
             <span ref={emojiPicker}>
               <Picker onSelect={addEmoji} value={emoji} />
             </span>
-          ) : ("")}
+          ) : ( "" )}
     </div>
   );
 }
