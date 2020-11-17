@@ -14,20 +14,30 @@ export default function Chat() {
   const [showEmoji, setShowEmoji] = useState(false);
   const emojiPicker = useRef();
 
+  const onNameChange = (e) => {
+    setName(e.target.value);
+  }
+  
+  const onMessageChange = (e) => {
+    setMessage(e.target.value);
+  }
+
   return (
     <div>
       <form>
         <h1>&lt; Cinque Chat /&gt;</h1>
         <div className="name-field">
           <input
+            onChange={onNameChange}
             className="name-input"
             name="name"
             value={name}
             label="Name"
-          ></input>
+            ></input>
         </div>
         <div className="message-field">
           <input
+            onChange={onMessageChange}
             className="message-input"
             name="message"
             value={message}
