@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Chat.css";
 import io from "socket.io-client";
 import "emoji-mart/css/emoji-mart.css";
-import { Picker } from "emoji-mart";
+
 
 import RenderChat from "../RenderChat/RenderChat";
 
@@ -12,9 +12,9 @@ export default function Chat() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
-  const [emoji, setEmoji] = useState();
+  
   const [showEmoji, setEmojiShow] = useState(false);
-  const emojiPicker = useRef();
+ 
 
   const onNameChange = (e) => {
     setName(e.target.value);
@@ -51,8 +51,7 @@ export default function Chat() {
 
   return (
     <div>
-      <form onSubmit={onMessageSubmit}>
-        <h1>&lt; Cinque Chat /&gt;</h1>
+      <form className="messager" onSubmit={onMessageSubmit}>
         <div className="name-field">
           <input
             onChange={onNameChange}
@@ -60,10 +59,13 @@ export default function Chat() {
             name="name"
             value={name}
             label="Name"
+            placeholder="Name..."
             ></input>
         </div>
         <RenderChat 
           chat={chat}
+          showEmoji={showEmoji}
+          addEmoji={addEmoji}
         />
         <div className="message-field">
           <input
@@ -72,16 +74,12 @@ export default function Chat() {
             name="message"
             value={message}
             label="Message"
+            placeholder="Message.."
           ></input>
+        <button className="message-btn stlt-btn stlt-std-btn">&gt;&gt; </button>
+  <span role="button" className="emoji-btn" onClick={showEmojis}><i className="emoji far fa-smile-beam fa-2x"></i></span>
         </div>
-        <button className="stlt-btn stlt-std-btn">&gt;&gt; </button>
       </form>
-        <button onClick={showEmojis}>Emoji</button>
-        {showEmoji ? (
-            <span ref={emojiPicker}>
-              <Picker onSelect={addEmoji} value={emoji} />
-            </span>
-          ) : ( "" )}
     </div>
   );
 }
