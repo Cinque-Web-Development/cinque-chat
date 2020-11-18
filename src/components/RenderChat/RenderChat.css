@@ -1,0 +1,18 @@
+.chat-space {
+  height: 600px;
+}
+
+.render-name {
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 100px;
+}
+
+.render-message {
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+  color: rgb(120, 212, 244);
+  width: 1000px;
+  height: 40px;
+}

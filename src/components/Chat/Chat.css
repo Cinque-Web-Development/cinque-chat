@@ -1,0 +1,38 @@
+.messager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+}
+
+.name-input {
+  width: 200px;
+  height: 40px;
+}
+
+.message-input {
+  width: 475px;
+  height: 35px;
+}
+
+.message-btn {
+  height: 40px;
+  width: 40px;
+  margin-left: 2px;
+}
+
+.message-btn:hover {
+  background-color: rgb(120, 212, 244);
+  color: white;
+}
+
+.emoji {
+  color: white;
+  margin-left: 6px;
+}
+
+.emoji:hover {
+  color: rgb(120, 212, 244);
+}
+
