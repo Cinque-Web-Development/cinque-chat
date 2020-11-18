@@ -21,13 +21,12 @@ export default function RenderChat({ chat, showEmoji, addEmoji }) {
     return (
         <div className="chat-space">
           {showEmoji ? (
-    <span className="emoji-btn" ref={emojiPicker}>
-      <Picker className="emoji-btn" onSelect={addEmoji} value={emoji} />
-    </span>
-  ) : (
-    displayChat()
-  )}
-            
+            <span className="emoji-btn" ref={emojiPicker}>
+                <Picker className="emoji-btn" onSelect={addEmoji} value={emoji} />
+            </span>
+            ) : (
+                displayChat()
+            )}
         </div>
     )
 }
