@@ -47,3 +47,18 @@
   color: #81D8F7;
 }
 
+@media only screen and (min-width: 500px) {
+  .messenger {
+    width: 400px;
+  }
+
+  .message-input {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .messenger {
+    width: 500px;
+  }
+}
