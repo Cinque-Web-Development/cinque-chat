@@ -24,4 +24,5 @@ h3 {
   background-color: white;
   color: rgb(120, 212, 244);
   padding: 3px 8px;
+  width: fit-content;
 }
