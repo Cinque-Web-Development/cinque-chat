@@ -1,5 +1,7 @@
 .chat-space {
   height: 600px;
+  overflow-y: scroll;
+  /* width: 95%; */
 }
 
 .render-name {

@@ -1,20 +1,21 @@
-.messager {
+.messenger {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 1px solid white;
   background-color: rgb(38, 38, 38);
-  margin-left: 300px;
-  margin-right: 300px;
+  width: 100%;
 }
 
 .name-input {
   width: 500px;
   height: 40px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .message-input {
+  font-family: 'Roboto', sans-serif;
   width: 475px;
   height: 35px;
 }
@@ -26,8 +27,9 @@
 }
 
 .message-btn:hover {
-  background-color: rgb(120, 212, 244);
+  background-color: #81D8F7;
   color: white;
+  font-weight: bold;
 }
 
 .emoji {
@@ -36,6 +38,6 @@
 }
 
 .emoji:hover {
-  color: rgb(120, 212, 244);
+  color: #81D8F7;
 }
 
