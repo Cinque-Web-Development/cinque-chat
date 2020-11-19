@@ -12,7 +12,7 @@ export default function RenderChat({ chat, showEmoji, addEmoji }) {
         return chat.map(({ name, message }, index) => (
             <div key={index}>
                 <h3>
-                    <span className="render-name">{name}:</span> <span className="render-message">{message}</span>
+                    <span className="render-name">{name}:</span> <div className="render-message">{message}</div>
                 </h3>
             </div>
         ));

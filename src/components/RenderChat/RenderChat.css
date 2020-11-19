@@ -1,5 +1,14 @@
 .chat-space {
-  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 70vh;
+  overflow-y: scroll;
+  width: 95%;
+}
+
+h3 {
+  margin: 10px 0;
 }
 
 .render-name {
@@ -15,4 +24,5 @@
   background-color: white;
   color: rgb(120, 212, 244);
   padding: 3px 8px;
+  width: fit-content;
 }

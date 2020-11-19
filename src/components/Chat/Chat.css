@@ -1,22 +1,29 @@
-.messager {
+.messenger {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 1px solid white;
   background-color: rgb(38, 38, 38);
-  margin-left: 300px;
-  margin-right: 300px;
+  width: 100%;
 }
 
 .name-input {
-  width: 500px;
+  width: 95%;
   height: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.message-field {
+  display: flex;
+  width: 95%;
 }
 
 .message-input {
-  width: 475px;
+  font-family: 'Roboto', sans-serif;
+  width: 60%;
   height: 35px;
+  word-wrap: break-word;
 }
 
 .message-btn {
@@ -26,8 +33,9 @@
 }
 
 .message-btn:hover {
-  background-color: rgb(120, 212, 244);
+  background-color: #81D8F7;
   color: white;
+  font-weight: bold;
 }
 
 .emoji {
@@ -36,6 +44,21 @@
 }
 
 .emoji:hover {
-  color: rgb(120, 212, 244);
+  color: #81D8F7;
 }
 
+@media only screen and (min-width: 500px) {
+  .messenger {
+    width: 400px;
+  }
+
+  .message-input {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .messenger {
+    width: 500px;
+  }
+}
