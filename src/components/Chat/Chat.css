@@ -9,15 +9,21 @@
 }
 
 .name-input {
-  width: 500px;
+  width: 95%;
   height: 40px;
   font-family: 'Roboto', sans-serif;
 }
 
+.message-field {
+  display: flex;
+  width: 95%;
+}
+
 .message-input {
   font-family: 'Roboto', sans-serif;
-  width: 475px;
+  width: 60%;
   height: 35px;
+  word-wrap: break-word;
 }
 
 .message-btn {

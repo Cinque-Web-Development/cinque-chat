@@ -50,18 +50,15 @@ export default function Chat() {
   }, [chat])
 
   return (
-    <div>
       <form className="messenger" onSubmit={onMessageSubmit}>
-        <div className="name-field">
-          <input
-            onChange={onNameChange}
-            className="name-input"
-            name="name"
-            value={name}
-            label="Name"
-            placeholder="Name..."
-            ></input>
-        </div>
+        <input
+          onChange={onNameChange}
+          className="name-input"
+          name="name"
+          value={name}
+          label="Name"
+          placeholder="Name..."
+          ></input>
         <RenderChat 
           chat={chat}
           showEmoji={showEmoji}
@@ -76,10 +73,9 @@ export default function Chat() {
             label="Message"
             placeholder="Message.."
           ></input>
-          <button className="message-btn stlt-btn stlt-std-btn">&gt;&gt; </button>
+          <button className="message-btn">&gt;&gt; </button>
           <span role="button" className="emoji-btn" onClick={showEmojis}><i className="emoji far fa-smile-beam fa-2x"></i></span>
         </div>
       </form>
-    </div>
   );
 }
