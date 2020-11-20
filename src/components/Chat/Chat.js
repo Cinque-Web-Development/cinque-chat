@@ -27,7 +27,7 @@ export default function Chat() {
   const onMessageSubmit = (e) => {
     e.preventDefault();
     if (message) {
-      socket.emit("message", {name, message});
+      socket.emit("new-message", {name, message});
       setMessage("");
       setEmojiShow(false);
     }
@@ -43,13 +43,13 @@ export default function Chat() {
   };
 
   useEffect(() => {
-    socket.on("message", ({name, message}) => {
+    socket.on("get-messages", ({name, message}) => {
       setChat([...chat, {name, message}]);
-      console.log(chat);
     })
   }, [chat])
 
   return (
+    <>
       <form className="messenger" onSubmit={onMessageSubmit}>
         <input
           onChange={onNameChange}
@@ -77,5 +77,6 @@ export default function Chat() {
           <span role="button" className="emoji-btn" onClick={showEmojis}><i className="emoji far fa-smile-beam fa-2x"></i></span>
         </div>
       </form>
+      </>
   );
 }
