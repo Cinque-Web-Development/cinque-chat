@@ -7,8 +7,8 @@ const port = process.env.PORT || 4000;
 
 
 io.on('connection', socket => {
-  socket.on('message', ({name, message}) => {
-    io.emit('message', {name, message})
+  socket.on('new-message', ({name, message}) => {
+    io.emit('get-messages', {name, message})
   })
 })
 
